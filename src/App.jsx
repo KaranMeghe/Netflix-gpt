@@ -1,11 +1,22 @@
-import { Body } from "./Components";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { SignIn, Browse } from './Components';
 
 function App() {
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <SignIn />
+    },
+    {
+      path: "/browse",
+      element: <Browse />
+    }
+  ]);
+
   return (
-    <div>
-      <Body />
-    </div>
+    <RouterProvider router={appRouter} />
   );
-}
+
+};
 
 export default App;
