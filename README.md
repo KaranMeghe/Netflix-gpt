@@ -8,6 +8,7 @@
 - Sign up Form
 - Form Validation
 - useRef()
+- FireBase
 
 # Features
 
