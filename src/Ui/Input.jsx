@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-const Input = ({ className, ...rest }) => {
+const Input = forwardRef(({ className, ...rest }, ref) => {
     return (
-        <input className={className} {...rest} />
+        <input ref={ref} className={className} {...rest} />
     );
-};
+});
 
 export default Input;
