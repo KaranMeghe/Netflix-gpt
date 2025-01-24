@@ -1,6 +1,6 @@
 
-import SignIn from "./Form/SignIn";
+import Form from "./Form/Form";
 import Browse from "./Browse/Browse";
 import Header from "./Header/Header";
 
-export { SignIn, Browse, Header };
+export { Form, Browse, Header };

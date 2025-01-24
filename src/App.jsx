@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { SignIn, Browse } from './Components';
+import { Form, Browse } from './Components';
 
 function App() {
   const appRouter = createBrowserRouter([
     {
       path: "/",
-      element: <SignIn />
+      element: <Form />
     },
     {
       path: "/browse",
