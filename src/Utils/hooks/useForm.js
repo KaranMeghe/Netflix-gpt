@@ -14,18 +14,18 @@ const useForm = (email, password, name) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        if (!email.current || !password.current || (!isSignIn && !name.current)) {
-            setValidationAlert("Please fill in all required fields.");
-            return;
-        }
+        setValidationAlert(false);
+        // if (!email.current.value || !password.current.value || (!isSignIn && !name.current)) {
+        //     return setValidationAlert("Please fill in all required fields.");
+        // }
 
         const nameValue = name?.current?.value || ""; // Handle null/undefined name
 
         const message = formValidation(
             email.current.value,
             password.current.value,
-            isSignIn ? "" : nameValue
+            nameValue,
+            isSignIn
         );
 
         setValidationAlert(message);
