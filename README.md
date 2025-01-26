@@ -8,7 +8,9 @@
 - Sign up Form
 - Form Validation
 - useRef()
-- FireBase
+- FireBase setup
+- Deploying app to production
+- Create Account to Sign up
 
 # Features
 

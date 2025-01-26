@@ -1,5 +1,5 @@
 
-export const formValidation = (email, password, name) => {
+export const formValidation = (email, password, name = "") => {
     email = email ? email.trim() : "";
     password = password ? password.trim() : "";
     name = name ? name.trim() : "";
