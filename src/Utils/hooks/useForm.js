@@ -50,7 +50,7 @@ const useForm = (email, password, name) => {
 
         email.current.value = "";
         password.current.value = "";
-        name.current.value = "";
+        !isSignIn ? name.current.value = "" : null;
     };
 
 
