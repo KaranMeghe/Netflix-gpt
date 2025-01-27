@@ -10,16 +10,15 @@ const useForm = (email, password, name) => {
     const handleToggleSignIn = () => {
         setIsSignIn(!isSignIn);
         setValidationAlert(false);
+        email.current.value = "";
+        password.current.value = "";
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setValidationAlert(false);
-        // if (!email.current.value || !password.current.value || (!isSignIn && !name.current)) {
-        //     return setValidationAlert("Please fill in all required fields.");
-        // }
 
-        const nameValue = name?.current?.value || ""; // Handle null/undefined name
+        let nameValue = name?.current?.value || ""; // Handle null/undefined name
 
         const message = formValidation(
             email.current.value,
@@ -48,7 +47,13 @@ const useForm = (email, password, name) => {
                     setValidationAlert(`${error.code} - ${error.message}`);
                 });
         }
+
+        email.current.value = "";
+        password.current.value = "";
+        name.current.value = "";
     };
+
+
 
     return { isSignIn, handleToggleSignIn, handleSubmit, validationAlert };
 };
