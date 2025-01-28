@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { formValidation } from '../Form Validation/formValidation';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 
@@ -37,6 +37,18 @@ const useForm = (email, password, name) => {
                 .then((userCredential) => {
                     const user = userCredential.user;
                     console.log(userCredential.user);
+
+                    updateProfile(user, {
+                        displayName: nameValue,
+                        photoURL: "https://example.com/jane-q-user/profile.jpg"
+                    }).then(() => {
+                        // Profile updated!
+                        navigate('/browse');
+                    }).catch((error) => {
+                        // An error occurred
+                        setValidationAlert(error.message);
+                    });
+
                     navigate('/browse');
                 })
                 .catch((error) => {
