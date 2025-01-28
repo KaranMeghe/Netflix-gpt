@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { formValidation } from '../Form Validation/formValidation';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
 const useForm = (email, password, name) => {
     const [isSignIn, setIsSignIn] = useState(true);
     const [validationAlert, setValidationAlert] = useState(false);
+    const navigate = useNavigate();
 
     const handleToggleSignIn = () => {
         setIsSignIn(!isSignIn);
@@ -33,7 +35,9 @@ const useForm = (email, password, name) => {
         if (!isSignIn) {
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
+                    const user = userCredential.user;
                     console.log(userCredential.user);
+                    navigate('/browse');
                 })
                 .catch((error) => {
                     setValidationAlert(`${error.code} - ${error.message}`);
@@ -41,7 +45,9 @@ const useForm = (email, password, name) => {
         } else {
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
+                    const user = userCredential.user;
                     console.log(userCredential.user);
+                    navigate('/browse');
                 })
                 .catch((error) => {
                     setValidationAlert(`${error.code} - ${error.message}`);
