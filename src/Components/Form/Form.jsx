@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Header } from '../index';
 import { Input, Button } from '../../Ui/index';
 import useForm from '../../Utils/hooks/useForm';

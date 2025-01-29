@@ -2,14 +2,12 @@ import { useState } from 'react';
 import { formValidation } from '../Form Validation/formValidation';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../firebase';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../../Redux/store';
 
 const useForm = (email, password, name) => {
     const [isSignIn, setIsSignIn] = useState(true);
     const [validationAlert, setValidationAlert] = useState(false);
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const handleToggleSignIn = () => {
@@ -22,7 +20,6 @@ const useForm = (email, password, name) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setValidationAlert(false);
-
         let nameValue = name?.current?.value || ""; // Handle null/undefined name
 
         const message = formValidation(
@@ -46,7 +43,7 @@ const useForm = (email, password, name) => {
                         photoURL: "https://example.com/jane-q-user/profile.jpg"
                     }).then(() => {
                         // Profile updated!
-                        navigate('/browse');
+
                         const { uid, email, displayName } = auth.currentUser;
                         dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
                     }).catch((error) => {
@@ -54,7 +51,7 @@ const useForm = (email, password, name) => {
                         setValidationAlert(error.message);
                     });
 
-                    navigate('/browse');
+
                 })
                 .catch((error) => {
                     setValidationAlert(`${error.code} - ${error.message}`);
@@ -62,9 +59,10 @@ const useForm = (email, password, name) => {
         } else {
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
+                    // eslint-disable-next-line no-unused-vars
                     const user = userCredential.user;
                     console.log(userCredential.user);
-                    navigate('/browse');
+
                 })
                 .catch((error) => {
                     setValidationAlert(`${error.code} - ${error.message}`);
@@ -75,8 +73,6 @@ const useForm = (email, password, name) => {
         password.current.value = "";
         !isSignIn ? name.current.value = "" : null;
     };
-
-
 
     return { isSignIn, handleToggleSignIn, handleSubmit, validationAlert };
 };
