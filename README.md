@@ -16,6 +16,9 @@
 - Implemented signout
 - Update profile api call
 - Fetch Movies from TMDB
+- BugFix: Sign up user display name and profile picture update
+- BugFix: if user is not loggedin and trying to access /browse, redirect user to sigIn form
+- unsubscribed to onAuthStateChanged callback
 
 # Features
 
