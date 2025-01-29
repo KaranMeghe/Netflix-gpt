@@ -3,11 +3,14 @@ import { formValidation } from '../Form Validation/formValidation';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../../Redux/store';
 
 const useForm = (email, password, name) => {
     const [isSignIn, setIsSignIn] = useState(true);
     const [validationAlert, setValidationAlert] = useState(false);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleToggleSignIn = () => {
         setIsSignIn(!isSignIn);
@@ -44,6 +47,8 @@ const useForm = (email, password, name) => {
                     }).then(() => {
                         // Profile updated!
                         navigate('/browse');
+                        const { uid, email, displayName } = auth.currentUser;
+                        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
                     }).catch((error) => {
                         // An error occurred
                         setValidationAlert(error.message);
