@@ -1,6 +1,8 @@
 import { fetchNowPlayingMovies } from "./services";
+import { store, addNowPlayingMovies } from '../Redux/store';
 
-export const nowPlayingMoviesLoader = () => {
-    const nowPlayingMovies = fetchNowPlayingMovies();
-    return nowPlayingMovies;
+export const nowPlayingMoviesLoader = async () => {
+    const movies = await fetchNowPlayingMovies(); // waiting for data
+    store.dispatch(addNowPlayingMovies(movies)); // dispatching actual data
+    return movies;
 };
