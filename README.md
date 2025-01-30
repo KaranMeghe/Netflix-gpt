@@ -19,6 +19,9 @@
 - BugFix: Sign up user display name and profile picture update
 - BugFix: if user is not loggedin and trying to access /browse, redirect user to sigIn form
 - unsubscribed to onAuthStateChanged callback
+- feat: add constants.js for centralized URL management
+- Created constants.js to store reusable URLs
+- Added LOGO and USER_ICON constants for Netflix logo and user icon URLs
 
 # Features
 

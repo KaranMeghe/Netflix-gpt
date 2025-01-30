@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider, } from 'react-router-dom';
 import { Form, Browse } from './Components';
 import App from './App';
+import { nowPlayingMoviesLoader } from './Utils/loader';
 
 const appRouter = createBrowserRouter([
   {
@@ -18,7 +19,8 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/browse",
-        element: <Browse />
+        element: <Browse />,
+        loader: nowPlayingMoviesLoader
       }
     ]
   }
