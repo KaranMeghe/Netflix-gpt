@@ -31,6 +31,11 @@
   - Integrated `nowPlayingMoviesLoader` with the `/browse` route
   - Ensures data is fetched only when the user is logged in
 - Improved code organization and error handling for a seamless user experience
+- Get Data from TMDB API
+- Custom Hook for fetching data Now Playing Movies
+- Create movies slice
+- FETCH data for trailer video
+- Embeded Trailer Video
 
 # Features
 

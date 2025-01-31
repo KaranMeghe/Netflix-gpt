@@ -36,7 +36,7 @@ const useForm = (email, password, name) => {
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    console.log(userCredential.user);
+
 
                     updateProfile(user, {
                         displayName: nameValue,
@@ -61,7 +61,7 @@ const useForm = (email, password, name) => {
                 .then((userCredential) => {
                     // eslint-disable-next-line no-unused-vars
                     const user = userCredential.user;
-                    console.log(userCredential.user);
+
 
                 })
                 .catch((error) => {
