@@ -2,16 +2,16 @@
 
 import { useFetchVideo } from "../../Utils/hooks/useFetchVideo";
 import { useSelector } from "react-redux";
-import { VscMute, VscUnmute } from "react-icons/vsc";
-import { Button } from "../../Ui";
-import { useMuteUnmute } from "../../Utils/hooks/useMuteUnmute";
+
 
 const VideoBackground = ({ movieId }) => {
     // Only call useFetchVideo when the movieId changes
     useFetchVideo(movieId);
 
     const trailerKey = useSelector((state) => state.movies.trailerId);
-    const { handleMute, mute } = useMuteUnmute();
+    // const { handleMute, mute } = useMuteUnmute();
+    // src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1${mute ? '&mute=1' : ''}`}
+
 
     return (
         <div className="w-screen">
@@ -19,7 +19,7 @@ const VideoBackground = ({ movieId }) => {
                 <iframe
                     id="youtubePlayer"
                     className="w-screen aspect-video"
-                    src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1${mute ? '&mute=1' : ''}`}
+                    src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1&mute=1`}
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
@@ -28,12 +28,12 @@ const VideoBackground = ({ movieId }) => {
             )}
 
             <div className="absolute bottom-12 right-15">
-                <Button
+                {/* <Button
                     onClick={handleMute}
                     className="text-white text-2xl border p-2 rounded-full"
                 >
                     {mute ? <VscMute /> : <VscUnmute />}
-                </Button>
+                </Button> */}
             </div>
         </div>
     );

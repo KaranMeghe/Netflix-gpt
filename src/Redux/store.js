@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { userReducer } from "./slices/userSlice";
 import { addUser, removeUser } from "./slices/userSlice";
 import { movieReducer } from "./slices/movieSlice";
-import { addNowPlayingMovies, addTrailerId, toggleMute } from "./slices/movieSlice";
+import { addNowPlayingMovies, addTrailerId, toggleMute, addPopularMovies, addTopRatedMovies, addUpcomingMovies } from "./slices/movieSlice";
 
 
 
@@ -13,4 +13,4 @@ const store = configureStore({
     }
 });
 
-export { store, addUser, removeUser, addNowPlayingMovies, addTrailerId, toggleMute };
+export { store, addUser, removeUser, addNowPlayingMovies, addTrailerId, toggleMute, addPopularMovies, addTopRatedMovies, addUpcomingMovies };

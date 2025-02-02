@@ -6,5 +6,7 @@ import MainContainer from "./MovieContainer/MainContainer";
 import SecondaryContainer from "./MovieContainer/SecondaryContainer";
 import VideoBackground from "./MovieContainer/VideoBackground";
 import VideoTitle from "./MovieContainer/VideoTitle";
+import MovieList from "./MovieContainer/MovieList";
+import MovieCard from "./MovieContainer/MovieCard";
 
-export { Form, Browse, Header, MainContainer, SecondaryContainer, VideoBackground, VideoTitle };
+export { Form, Browse, Header, MainContainer, SecondaryContainer, VideoBackground, VideoTitle, MovieList, MovieCard };
