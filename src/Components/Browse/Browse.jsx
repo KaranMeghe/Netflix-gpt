@@ -2,9 +2,7 @@
 import { useLoaderData } from 'react-router-dom';
 import Header from '../Header/Header';
 import { MainContainer, SecondaryContainer } from '../index';
-import useFetchPopularMovie from '../../Utils/hooks/useFetchPopularMovie';
-import useFetchTopRatedMovies from '../../Utils/hooks/useFetchTopRatedMovies';
-import useFetchUpcomingMovies from '../../Utils/hooks/useFetchUpcomingMovies';
+import { useFetchPopularMovie, useFetchTopRatedMovies, useFetchUpcomingMovies } from '../../Utils/hooks/Movies/index';
 
 const Browse = () => {
     // eslint-disable-next-line no-unused-vars

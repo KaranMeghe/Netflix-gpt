@@ -1,8 +1,8 @@
 
-import { fetchPopularMovies } from "../services";
+import { fetchPopularMovies } from "../../services";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addPopularMovies } from "../../Redux/store";
+import { addPopularMovies } from "../../../Redux/store";
 
 const useFetchPopularMovie = () => {
     const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchUpcomingMovies } from '../services';
-import { addUpcomingMovies } from '../../Redux/store';
+import { fetchUpcomingMovies } from '../../services';
+import { addUpcomingMovies } from '../../../Redux/store';
 
 const useFetchUpcomingMovies = () => {
     const dispatch = useDispatch();
