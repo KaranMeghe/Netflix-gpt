@@ -13,15 +13,6 @@ const Browse = () => {
     return (
         <div className='relative'>
             <Header />
-            {/* 
-             Main Container 
-               - Video Background
-               - Video Title
-
-             Secondary Container 
-                 - MovieList * n
-                   - Cards * n
-             */}
             <MainContainer />
             <SecondaryContainer />
         </div>
