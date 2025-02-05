@@ -3,13 +3,14 @@ import { userReducer } from "./slices/userSlice";
 import { addUser, removeUser } from "./slices/userSlice";
 import { movieReducer } from "./slices/movieSlice";
 import { addNowPlayingMovies, addTrailerId, toggleMute, addPopularMovies, addTopRatedMovies, addUpcomingMovies } from "./slices/movieSlice";
-
-
+import { gptReducer } from "./slices/gptSlice";
+import { toggeleGptSearch } from "./slices/gptSlice";
 
 const store = configureStore({
     reducer: {
         users: userReducer,
-        movies: movieReducer
+        movies: movieReducer,
+        gpt: gptReducer
     }
 });
 
