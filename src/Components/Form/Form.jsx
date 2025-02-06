@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Header } from '../index';
 import { Input, Button } from '../../Ui/index';
 import useForm from '../../Utils/hooks/useForm';
+import { POSTER_IMG, POSTER_IMG_SRCSET } from '../../Utils/constatnt';
 
 
 
@@ -15,7 +16,7 @@ const Form = () => {
         <header className='relative h-screen'>
             <Header />
             <div>
-                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/7a8c0067-a424-4e04-85f8-9e25a49a86ed/web/IN-en-20250120-TRIFECTA-perspective_860a95da-c386-446e-af83-fef8ddd80803_large.jpg" srcSet="https://assets.nflxext.com/ffe/siteui/vlv3/7a8c0067-a424-4e04-85f8-9e25a49a86ed/web/IN-en-20250120-TRIFECTA-perspective_860a95da-c386-446e-af83-fef8ddd80803_large.jpg 2000w, https://assets.nflxext.com/ffe/siteui/vlv3/7a8c0067-a424-4e04-85f8-9e25a49a86ed/web/IN-en-20250120-TRIFECTA-perspective_860a95da-c386-446e-af83-fef8ddd80803_medium.jpg 1279w, https://assets.nflxext.com/ffe/siteui/vlv3/7a8c0067-a424-4e04-85f8-9e25a49a86ed/web/IN-en-20250120-TRIFECTA-perspective_860a95da-c386-446e-af83-fef8ddd80803_small.jpg 959w" alt="bg-img" aria-hidden="true"
+                <img src={POSTER_IMG} srcSet={POSTER_IMG_SRCSET} aria-hidden="true" alt="bg-movie-poster"
                     className="h-screen w-full object-cover" />
             </div>
 
