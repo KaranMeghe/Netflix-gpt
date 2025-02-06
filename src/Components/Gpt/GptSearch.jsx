@@ -1,6 +1,11 @@
+import { GptSearchBar, GptSuggestions } from '../index';
+
 const GptSearch = () => {
     return (
-        <div>GptSearch</div>
+        <div className='flex flex-col items-center justify-center h-screen z-80'>
+            <GptSearchBar />
+            <GptSuggestions />
+        </div>
     );
 };
 

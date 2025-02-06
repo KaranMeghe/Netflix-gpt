@@ -12,5 +12,5 @@ const gptSlice = createSlice({
     }
 });
 
-export const { showGptSearch } = gptSlice.actions;
+export const { toggleGptSearch } = gptSlice.actions;
 export const gptReducer = gptSlice.reducer;

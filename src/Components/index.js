@@ -9,5 +9,7 @@ import VideoTitle from "./MovieContainer/VideoTitle";
 import MovieList from "./MovieContainer/MovieList";
 import MovieCard from "./MovieContainer/MovieCard";
 import GptSearch from './Gpt/GptSearch';
+import GptSearchBar from "./Gpt/GptSearchBar";
+import GptSuggestions from "./Gpt/GptSuggestions";
 
-export { Form, Browse, Header, MainContainer, SecondaryContainer, VideoBackground, VideoTitle, MovieList, MovieCard, GptSearch };
+export { Form, Browse, Header, MainContainer, SecondaryContainer, VideoBackground, VideoTitle, MovieList, MovieCard, GptSearch, GptSearchBar, GptSuggestions };

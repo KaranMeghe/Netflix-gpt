@@ -1,13 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import { addUser, removeUser } from '../../../Redux/store';
+import { addUser, removeUser, toggleGptSearch } from '../../../Redux/store';
 import { auth } from '../../firebase';
 import { useEffect } from 'react';
 
 const useHeaderLogic = () => {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.users);
+    const showGptSearch = useSelector((state) => state.gpt.showGptSearch);
     const navigate = useNavigate();
 
     const handleSignOut = () => {
@@ -18,6 +19,11 @@ const useHeaderLogic = () => {
             console.log(error);
             navigate('/error');
         });
+    };
+
+    const handleToggleGpt = () => {
+        dispatch(toggleGptSearch());
+        console.log(showGptSearch);
     };
 
     useEffect(() => {
@@ -36,7 +42,7 @@ const useHeaderLogic = () => {
         return () => unsubscribe();
     }, [dispatch, navigate]);
 
-    return { user, handleSignOut };
+    return { user, handleSignOut, handleToggleGpt, showGptSearch };
 };
 
 export default useHeaderLogic;
