@@ -11,5 +11,6 @@ import MovieCard from "./MovieContainer/MovieCard";
 import GptSearch from './Gpt/GptSearch';
 import GptSearchBar from "./Gpt/GptSearchBar";
 import GptSuggestions from "./Gpt/GptSuggestions";
+import LanguageSelector from "./Gpt/LanguageSelector";
 
-export { Form, Browse, Header, MainContainer, SecondaryContainer, VideoBackground, VideoTitle, MovieList, MovieCard, GptSearch, GptSearchBar, GptSuggestions };
+export { Form, Browse, Header, MainContainer, SecondaryContainer, VideoBackground, VideoTitle, MovieList, MovieCard, GptSearch, GptSearchBar, GptSuggestions, LanguageSelector };
