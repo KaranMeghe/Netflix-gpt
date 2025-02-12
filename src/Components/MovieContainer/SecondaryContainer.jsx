@@ -4,7 +4,7 @@ import { useMemo } from "react";
 
 const SecondaryContainer = () => {
     const movies = useSelector((state) => state.movies);
-    console.log("Movies popular", movies.popularMovies);
+
     // xl:top-170 2xl:top-210
     // Memoize MovieList to prevent unnecessary re-renders
     const movieList = useMemo(() => {

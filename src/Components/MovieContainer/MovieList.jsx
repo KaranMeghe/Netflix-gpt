@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { MovieCard } from '../index';
 const MovieList = ({ title, movies }) => {
-    console.log("Movies", movies);
+
     return (
         <div className="p-6  text-white ">
             <h2 className='text-2xl'>{title}</h2>

@@ -40,3 +40,17 @@ export const fetchUpcomingMovies = async (page = 1) => {
         return null;
     }
 };
+
+export const fetchSearchMovies = async (movie, page = 1) => {
+    try {
+        const { data } = await axios.get(
+            `https://api.themoviedb.org/3/search/movie?query=${movie}&include_adult=false&language=en-US&page=${page}`,
+            API_OPTIONS
+        );
+        return data.results || [];
+
+    } catch (error) {
+        console.error(`Error fetching search movies for "${movie}":`, error);
+        throw error;
+    }
+};
