@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import { MovieCard } from '../index';
 const MovieList = ({ title, movies }) => {
 
@@ -8,7 +9,9 @@ const MovieList = ({ title, movies }) => {
             <div className='flex overflow-x-scroll scrollbar-hide'>
                 <div className='flex'>
                     {movies && movies.map((movie) => {
-                        return <MovieCard key={movie.id} movie={movie} />;
+                        return <Link key={movie.id} to={`/moviedetails/${movie.id}`}>
+                            <MovieCard key={movie.id} movie={movie} />
+                        </Link>;
                     })}
                 </div>
             </div>

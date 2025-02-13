@@ -4,9 +4,9 @@ import './index.css';
 import { store } from './Redux/store';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider, } from 'react-router-dom';
-import { Form, Browse } from './Components';
+import { Form, Browse, MovieDetails } from './Components';
 import App from './App';
-import { nowPlayingMoviesLoader } from './Utils/loader';
+import { movieDetailsLoader, nowPlayingMoviesLoader } from './Utils/loader';
 
 const appRouter = createBrowserRouter([
   {
@@ -21,6 +21,11 @@ const appRouter = createBrowserRouter([
         path: "/browse",
         element: <Browse />,
         loader: nowPlayingMoviesLoader
+      },
+      {
+        path: `/moviedetails/:movieId`,
+        element: <MovieDetails />,
+        loader: movieDetailsLoader
       }
     ]
   }

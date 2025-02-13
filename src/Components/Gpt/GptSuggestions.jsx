@@ -13,8 +13,7 @@ const GptSuggestions = () => {
         );
     }
 
-    if (!searchResults || searchResults.length === 0) return null; // Hide component if no results
-
+    if (!searchResults || searchResults.length === 0) return null;
     return (
         <div className="w-full overflow-x-auto bg-black p-6">
             <div className="flex gap-4 w-max">

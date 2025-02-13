@@ -54,3 +54,12 @@ export const fetchSearchMovies = async (movie, page = 1) => {
         throw error;
     }
 };
+
+export const fetchMovieDetails = async (movieId) => {
+    try {
+        const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, API_OPTIONS);
+        return data;
+    } catch (error) {
+        console.error(`Error fetching movie details, error`, error);
+    }
+};
