@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addSearchResults, changeLang, setIsLoading } from "../../Redux/store"; // Correct import path
 import SUPPORTED_LANG from "../langConstant";
-import model from "../../Utils/gemniApi";
+import { model } from "../../Utils/gemniApi";
 import { fetchSearchMovies } from "../services";
 
 
@@ -46,7 +46,6 @@ const useSearchLng = (searchText) => {
                 }
             }
 
-            console.log("Parsed Gemini Data:", movieData);
 
             // Fetch movie details from TMDb API
             const searchResults = await Promise.all(

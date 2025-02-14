@@ -8,8 +8,8 @@ const SecondaryContainer = () => {
     // xl:top-170 2xl:top-210
     // Memoize MovieList to prevent unnecessary re-renders
     const movieList = useMemo(() => {
-        return <div className="w-full bg-black ">
-            <div className="md:-mt-1 xl:-mt-34 2xl:-mt-56 z-20 relative">
+        return <div className="w-full h-full bg-black ">
+            <div className="top-[380px] md:top-0 md:-mt-1 xl:-mt-34 2xl:-mt-56 z-20 relative bg-black">
                 <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies} />
                 <MovieList title={"Popular Movies"} movies={movies.popularMovies} />
                 <MovieList title={"Top Rated"} movies={movies.topRatedMovies} />

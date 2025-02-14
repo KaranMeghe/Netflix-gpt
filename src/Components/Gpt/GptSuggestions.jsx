@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import MovieCard from "../MovieContainer/MovieCard";
-
+import { Link } from "react-router-dom";
 
 const GptSuggestions = () => {
     const { searchResults, isLoading } = useSelector((state) => state.gpt);
@@ -19,7 +19,9 @@ const GptSuggestions = () => {
             <div className="flex gap-4 w-max">
                 {searchResults.map((movie) => (
                     <div key={movie.id} className="min-w-[200px]">
-                        <MovieCard movie={movie} />
+                        <Link to={`/moviedetails/${movie.id}`}>
+                            <MovieCard movie={movie} />
+                        </Link>
                     </div>
                 ))}
             </div>

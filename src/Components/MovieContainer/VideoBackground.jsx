@@ -26,15 +26,6 @@ const VideoBackground = ({ movieId }) => {
                     allowFullScreen
                 ></iframe>
             )}
-
-            <div className="absolute bottom-12 right-15">
-                {/* <Button
-                    onClick={handleMute}
-                    className="text-white text-2xl border p-2 rounded-full"
-                >
-                    {mute ? <VscMute /> : <VscUnmute />}
-                </Button> */}
-            </div>
         </div>
     );
 };
